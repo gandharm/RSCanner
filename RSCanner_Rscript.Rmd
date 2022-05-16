@@ -229,7 +229,7 @@ for (k in 2:length(finalwind_init)) {
   finalwind_init[k] <- finalwind_init[k-1] + 100
 }
 
-finalwind_fin[1] <- 100
+finalwind_fin[1] <- 100 # is it possible to make this a user-defined parameter up at the top?
 for (k in 2:length(finalwind_fin)) {
   finalwind_fin[k] <- finalwind_fin[k-1] + 100
 }
