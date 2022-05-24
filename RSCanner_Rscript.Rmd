@@ -334,7 +334,7 @@ ggplot(data=dat, aes(dates, value)) +
   geom_line(lty=2, color="steelblue", lwd=1.1) +
   geom_point() +
   geom_rect(data=rects, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=min(dat$value),
-                ymax=max(dat$value), group=group), color="transparent", fill="orange", alpha=0.3) + geom_tile()
+                ymax=max(dat$value), group=group), color="transparent", fill=as.character(dat$cols), alpha=1)
 ```
 
 ```{r}
