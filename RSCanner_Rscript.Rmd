@@ -305,7 +305,19 @@ d
 ```{r}
 colorRampPalette(colors=c("#FF0000", "#FFFF00"))(length(dat$vals))
 ```
+## Run this block if you want to save the plot to a high quality image ##
+```{r}
+## USER INPUT: Specify the parameters for the final plot
+filename <- "HCV_heatmap"
+device <- "tiff"
+path <- NULL # defaults to current working directory
+width <- 7
+height <- 3
+dpi <- 300
+##
 
+ggsave(filename, device=device, path=path, width=width, height=height, dpi=dpi)
+```
 
 ----- the next two blocks are representative tests showcasing some graph-building to be workshopped ----
 
