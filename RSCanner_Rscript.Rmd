@@ -32,6 +32,12 @@ USER INPUTS: HCV TEST-- uncomment this when you want to see HCV results (from Ta
 # 
 # #USER: Input window size
 # window_size <- 50
+
+#USER: Input Shannon Entropy cutoff
+SE_cutoff <- 0.5
+
+#USER: Input BPC cutoff
+BPC_cutoff <- 0.5
 ```
 
 
@@ -197,8 +203,8 @@ for (o in 1:length(shannon)) {
 ```
 
 ```{r}
-a <- which(oneminus_dotperc > median(oneminus_dotperc)) #indices of the bpcs that are above median
-b <- which(med_shan < median(med_shan)) #indices of shannons that are below median
+a <- which(oneminus_dotperc > quantile(oneminus_dotperc, probs=c(BPC_cutoff),name=FALSE)) #indices of the bpcs that are above cutoff
+b <- which(med_shan < quantile(med_shan, probs=c(SE_cutoff),name=FALSE)) #indices of shannons that are below cutoff
 
 abinter <- intersect(a,b) #intersection of the two vectors
 ```
