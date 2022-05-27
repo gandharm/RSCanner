@@ -244,6 +244,7 @@ for (o in 1:length(structure_counts)) {
 }
 
 finalwind_inds <- seq(from = 50, to = length(shannon), by = 100)
+#finalwind_inds <- seq(from = 50, to = round(length(shannon), digits=-1), by = 100)
 ```
 
 ```{r}
