@@ -24,12 +24,18 @@ library(seqinr)
 #USER: Input dot-bracket file
 dotbracketinput <- seqinr::read.fasta("HCV_JFH1_2a.txt", set.attributes = FALSE, whole.header = FALSE)
 dotbracket_vector <- dotbracketinput$ENERGY[((length(dotbracketinput$ENERGY)/2)+1):length(dotbracketinput$ENERGY)]
+#the script here need the fasta header(dot_bracket file header) to have the word “ENERGY”. In
+practice, user could have anything in the header. (could you make it just jump the first line?)
+
 #USER: Input ct file
 ctfileinput <- read.table("HCV_JFH1_2a_genome_model.ct")
+#I think the script here need the CT file header to be in certain length. In practice, the user could have anything in the header. (could you make it just jump the first line?)
+
 #USER (OPTIONAL): Input list of Shannon values
 shannoninput <- (read_excel("Dataset_S1_HCV_genome_SHAPE_reactivities.xlsx", sheet = 3, col_names = TRUE))
 #shannoninput <- read_excel("shannon.txt", header = TRUE)
 shannon <- shannoninput$Shannon
+#Here the script require that the Shannon file has a header, most of Shannon files don’t have header, maybe we could change “header =FALSE”
 #USER: Input window size for BPC calculation
 window_size <- 50
 #USER: Input window size for Shannon entropy smoothing
