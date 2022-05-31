@@ -67,7 +67,6 @@ for (k in 1:length(dotbracket_nums)) {
   }
 }
 dotbracket_real[which(dotbracket_real == "0")] <- "."
-## USE ^^^ dotbracket_real for "dotbracket_vector" downstream script if ctfile is the input.
 dotbracket_vector <- dotbracket_real
 
 dotbracket_vector_bin <- numeric(length(dotbracket_vector))
