@@ -181,6 +181,12 @@ ggplot(data = shanplotdata, aes(x = `Nucleotide Position`, y = `Smoothed Median 
   geom_line() + geom_hline(yintercept = quantile(med_shan, probs=c(SE_cutoff),name=FALSE), linetype = "dashed", color = "blue", size = 1)
 ```
 
+#plot histogram of structure counts
+```{r}
+hist(abinter, xlab = "Nucleotide", ylab = "Structure Counts", main=NULL, breaks = seq(from=-100, to=length(shannon)+100, by=100))
+box(col = "black")
+```
+
 #plot the percentage of well-defined structures in non-overlaping bins along the RNA
 ```{r}
 finalwind <- 100
